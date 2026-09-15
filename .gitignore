@@ -1,0 +1,6 @@
+*.pcap
+*.pcapng
+.env
+__pycache__/
+*.pyc
+.clab-*/
