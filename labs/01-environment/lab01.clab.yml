@@ -1,0 +1,18 @@
+name: lab01
+
+topology:
+  nodes:
+    host-a:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.0.0.1/30 dev eth1
+
+    host-b:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.0.0.2/30 dev eth1
+
+  links:
+    - endpoints: ["host-a:eth1", "host-b:eth1"]
