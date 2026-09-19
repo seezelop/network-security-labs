@@ -1,0 +1,58 @@
+name: lab03
+
+topology:
+  nodes:
+    gw01:
+      kind: linux
+      image: alpine:latest
+      exec:
+        # USERS
+        - ip addr add 10.10.50.1/25 dev eth1
+        - ip -6 addr add 2001:db8:10::1/64 dev eth1
+
+        # SERVERS
+        - ip addr add 10.10.50.129/26 dev eth2
+        - ip -6 addr add 2001:db8:20::1/64 dev eth2
+
+        # ADMIN
+        - ip addr add 10.10.50.193/27 dev eth3
+        - ip -6 addr add 2001:db8:30::1/64 dev eth3
+
+        # DMZ
+        - ip addr add 10.10.50.225/28 dev eth4
+        - ip -6 addr add 2001:db8:40::1/64 dev eth4
+
+    user01:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - apk add --no-cache tcpdump
+        - ip addr add 10.10.50.10/25 dev eth1
+        - ip -6 addr add 2001:db8:10::10/64 dev eth1
+
+    server01:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.10.50.130/26 dev eth1
+        - ip -6 addr add 2001:db8:20::10/64 dev eth1
+
+    admin01:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.10.50.194/27 dev eth1
+        - ip -6 addr add 2001:db8:30::10/64 dev eth1
+
+    dmz01:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.10.50.226/28 dev eth1
+        - ip -6 addr add 2001:db8:40::10/64 dev eth1
+
+  links:
+    - endpoints: ["user01:eth1", "gw01:eth1"]
+    - endpoints: ["server01:eth1", "gw01:eth2"]
+    - endpoints: ["admin01:eth1", "gw01:eth3"]
+    - endpoints: ["dmz01:eth1", "gw01:eth4"]

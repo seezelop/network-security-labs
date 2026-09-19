@@ -1,0 +1,47 @@
+{
+  "freeTextAnnotations": [],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "gw01",
+      "position": {
+        "x": 380,
+        "y": 340
+      }
+    },
+    {
+      "id": "user01",
+      "position": {
+        "x": 520,
+        "y": 420
+      }
+    },
+    {
+      "id": "server01",
+      "position": {
+        "x": 400,
+        "y": 180
+      }
+    },
+    {
+      "id": "admin01",
+      "position": {
+        "x": 400,
+        "y": 500
+      }
+    },
+    {
+      "id": "dmz01",
+      "position": {
+        "x": 520,
+        "y": 280
+      }
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {}
+}
