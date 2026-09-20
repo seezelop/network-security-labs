@@ -1,0 +1,216 @@
+{
+  "freeTextAnnotations": [
+    {
+      "id": "freeText_1789945437218",
+      "text": "REMOTE LAN",
+      "position": {
+        "x": 301.918459146385,
+        "y": 520.6908901512646
+      },
+      "fontSize": 14,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1789945489915",
+      "text": "USERS\n",
+      "position": {
+        "x": 912.8674430713992,
+        "y": 394.56540036297775
+      },
+      "fontSize": 14,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1789945914574",
+      "text": "SERVERS\n",
+      "position": {
+        "x": 725.7520369836113,
+        "y": 68.0755666553212
+      },
+      "fontSize": 14,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1789946040419",
+      "text": "Transit - 10.0.12.0/30",
+      "position": {
+        "x": 419.7644124844319,
+        "y": 364.3624655903656
+      },
+      "fontSize": 14,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1789946199515",
+      "text": "802.1Q Trunk - VLAN 10, 20",
+      "position": {
+        "x": 524.7371912846766,
+        "y": 270.2942206867046
+      },
+      "fontSize": 14,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    }
+  ],
+  "freeShapeAnnotations": [
+    {
+      "id": "freeShape_1789945433744",
+      "shapeType": "rectangle",
+      "position": {
+        "x": 852.2011840448124,
+        "y": 273.45940444218786
+      },
+      "width": 174,
+      "height": 131,
+      "fillColor": "#226f06",
+      "fillOpacity": 0.2,
+      "borderColor": "#bbbebf",
+      "borderWidth": 1,
+      "borderStyle": "solid",
+      "rotation": 0,
+      "zIndex": -1
+    },
+    {
+      "id": "freeShape_1789945487443",
+      "shapeType": "rectangle",
+      "position": {
+        "x": 293.0111775341747,
+        "y": 414.9414653824773
+      },
+      "width": 95,
+      "height": 111,
+      "fillColor": "#226f06",
+      "fillOpacity": 0.2,
+      "borderColor": "#bbbebf",
+      "borderWidth": 1,
+      "borderStyle": "solid",
+      "rotation": 0,
+      "zIndex": -1
+    },
+    {
+      "id": "freeShape_1789945910346",
+      "shapeType": "rectangle",
+      "position": {
+        "x": 713.8365982987241,
+        "y": 115.14960871147142
+      },
+      "width": 103,
+      "height": 121,
+      "fillColor": "#226f06",
+      "fillOpacity": 0.2,
+      "borderColor": "#bbbebf",
+      "borderWidth": 1,
+      "borderStyle": "solid",
+      "rotation": 0,
+      "zIndex": -1
+    },
+    {
+      "id": "freeShape_1789946023970",
+      "shapeType": "rectangle",
+      "position": {
+        "x": 419.5569631348671,
+        "y": 364.7015388542634
+      },
+      "width": 139,
+      "height": 64,
+      "fillColor": "#e95e2f",
+      "fillOpacity": 0.2,
+      "borderColor": "#bbbebf",
+      "borderWidth": 1,
+      "borderStyle": "solid",
+      "rotation": 0,
+      "zIndex": -1
+    },
+    {
+      "id": "freeShape_1789946184770",
+      "shapeType": "rectangle",
+      "position": {
+        "x": 519.6303209671785,
+        "y": 274.853074643861
+      },
+      "width": 205,
+      "height": 80,
+      "fillColor": "#e95e2f",
+      "fillOpacity": 0.2,
+      "borderColor": "#bbbebf",
+      "borderWidth": 1,
+      "borderStyle": "solid",
+      "rotation": 0,
+      "zIndex": -1
+    }
+  ],
+  "trafficRateAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "user01",
+      "position": {
+        "x": 920,
+        "y": 300
+      }
+    },
+    {
+      "id": "server01",
+      "position": {
+        "x": 740,
+        "y": 140
+      }
+    },
+    {
+      "id": "r01",
+      "position": {
+        "x": 460,
+        "y": 300
+      }
+    },
+    {
+      "id": "r02",
+      "position": {
+        "x": 460,
+        "y": 440
+      }
+    },
+    {
+      "id": "remote01",
+      "position": {
+        "x": 320,
+        "y": 440
+      }
+    },
+    {
+      "id": "sw01",
+      "position": {
+        "x": 740,
+        "y": 300
+      }
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {}
+}

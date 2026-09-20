@@ -1,0 +1,36 @@
+sebastian@Laptop-seba:~$ sudo tcpdump -eni sw01-trunk -vv 'vlan and icmp'
+[sudo: authenticate] Password:            
+tcpdump: listening on sw01-trunk, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+19:43:03.670143 aa:c1:ab:db:08:c2 > aa:c1:ab:56:1c:a0, ethertype 802.1Q (0x8100), length 102: vlan 10, p 0, ethertype IPv4 (0x0800), (tos 0x0, ttl 64, id 19895, offset 0, flags [DF], proto ICMP (1), length 84)
+    10.10.10.10 > 10.10.20.10: ICMP echo request, id 35, seq 0, length 64
+19:43:03.670167 aa:c1:ab:56:1c:a0 > aa:c1:ab:70:ac:b6, ethertype 802.1Q (0x8100), length 102: vlan 20, p 0, ethertype IPv4 (0x0800), (tos 0x0, ttl 63, id 19895, offset 0, flags [DF], proto ICMP (1), length 84)
+    10.10.10.10 > 10.10.20.10: ICMP echo request, id 35, seq 0, length 64
+19:43:03.670328 aa:c1:ab:70:ac:b6 > aa:c1:ab:56:1c:a0, ethertype 802.1Q (0x8100), length 102: vlan 20, p 0, ethertype IPv4 (0x0800), (tos 0x0, ttl 64, id 54822, offset 0, flags [none], proto ICMP (1), length 84)
+    10.10.20.10 > 10.10.10.10: ICMP echo reply, id 35, seq 0, length 64
+19:43:03.670340 aa:c1:ab:56:1c:a0 > aa:c1:ab:db:08:c2, ethertype 802.1Q (0x8100), length 102: vlan 10, p 0, ethertype IPv4 (0x0800), (tos 0x0, ttl 63, id 54822, offset 0, flags [none], proto ICMP (1), length 84)
+    10.10.20.10 > 10.10.10.10: ICMP echo reply, id 35, seq 0, length 64
+19:43:04.670238 aa:c1:ab:db:08:c2 > aa:c1:ab:56:1c:a0, ethertype 802.1Q (0x8100), length 102: vlan 10, p 0, ethertype IPv4 (0x0800), (tos 0x0, ttl 64, id 20255, offset 0, flags [DF], proto ICMP (1), length 84)
+    10.10.10.10 > 10.10.20.10: ICMP echo request, id 35, seq 1, length 64
+19:43:04.670270 aa:c1:ab:56:1c:a0 > aa:c1:ab:70:ac:b6, ethertype 802.1Q (0x8100), length 102: vlan 20, p 0, ethertype IPv4 (0x0800), (tos 0x0, ttl 63, id 20255, offset 0, flags [DF], proto ICMP (1), length 84)
+    10.10.10.10 > 10.10.20.10: ICMP echo request, id 35, seq 1, length 64
+19:43:04.670311 aa:c1:ab:70:ac:b6 > aa:c1:ab:56:1c:a0, ethertype 802.1Q (0x8100), length 102: vlan 20, p 0, ethertype IPv4 (0x0800), (tos 0x0, ttl 64, id 54950, offset 0, flags [none], proto ICMP (1), length 84)
+    10.10.20.10 > 10.10.10.10: ICMP echo reply, id 35, seq 1, length 64
+19:43:04.670322 aa:c1:ab:56:1c:a0 > aa:c1:ab:db:08:c2, ethertype 802.1Q (0x8100), length 102: vlan 10, p 0, ethertype IPv4 (0x0800), (tos 0x0, ttl 63, id 54950, offset 0, flags [none], proto ICMP (1), length 84)
+    10.10.20.10 > 10.10.10.10: ICMP echo reply, id 35, seq 1, length 64
+19:43:05.670576 aa:c1:ab:db:08:c2 > aa:c1:ab:56:1c:a0, ethertype 802.1Q (0x8100), length 102: vlan 10, p 0, ethertype IPv4 (0x0800), (tos 0x0, ttl 64, id 20830, offset 0, flags [DF], proto ICMP (1), length 84)
+    10.10.10.10 > 10.10.20.10: ICMP echo request, id 35, seq 2, length 64
+19:43:05.670608 aa:c1:ab:56:1c:a0 > aa:c1:ab:70:ac:b6, ethertype 802.1Q (0x8100), length 102: vlan 20, p 0, ethertype IPv4 (0x0800), (tos 0x0, ttl 63, id 20830, offset 0, flags [DF], proto ICMP (1), length 84)
+    10.10.10.10 > 10.10.20.10: ICMP echo request, id 35, seq 2, length 64
+19:43:05.670657 aa:c1:ab:70:ac:b6 > aa:c1:ab:56:1c:a0, ethertype 802.1Q (0x8100), length 102: vlan 20, p 0, ethertype IPv4 (0x0800), (tos 0x0, ttl 64, id 55092, offset 0, flags [none], proto ICMP (1), length 84)
+    10.10.20.10 > 10.10.10.10: ICMP echo reply, id 35, seq 2, length 64
+19:43:05.670674 aa:c1:ab:56:1c:a0 > aa:c1:ab:db:08:c2, ethertype 802.1Q (0x8100), length 102: vlan 10, p 0, ethertype IPv4 (0x0800), (tos 0x0, ttl 63, id 55092, offset 0, flags [none], proto ICMP (1), length 84)
+    10.10.20.10 > 10.10.10.10: ICMP echo reply, id 35, seq 2, length 64
+19:43:06.670865 aa:c1:ab:db:08:c2 > aa:c1:ab:56:1c:a0, ethertype 802.1Q (0x8100), length 102: vlan 10, p 0, ethertype IPv4 (0x0800), (tos 0x0, ttl 64, id 21468, offset 0, flags [DF], proto ICMP (1), length 84)
+    10.10.10.10 > 10.10.20.10: ICMP echo request, id 35, seq 3, length 64
+19:43:06.670899 aa:c1:ab:56:1c:a0 > aa:c1:ab:70:ac:b6, ethertype 802.1Q (0x8100), length 102: vlan 20, p 0, ethertype IPv4 (0x0800), (tos 0x0, ttl 63, id 21468, offset 0, flags [DF], proto ICMP (1), length 84)
+    10.10.10.10 > 10.10.20.10: ICMP echo request, id 35, seq 3, length 64
+19:43:06.670950 aa:c1:ab:70:ac:b6 > aa:c1:ab:56:1c:a0, ethertype 802.1Q (0x8100), length 102: vlan 20, p 0, ethertype IPv4 (0x0800), (tos 0x0, ttl 64, id 55544, offset 0, flags [none], proto ICMP (1), length 84)
+    10.10.20.10 > 10.10.10.10: ICMP echo reply, id 35, seq 3, length 64
+19:43:06.670962 aa:c1:ab:56:1c:a0 > aa:c1:ab:db:08:c2, ethertype 802.1Q (0x8100), length 102: vlan 10, p 0, ethertype IPv4 (0x0800), (tos 0x0, ttl 63, id 55544, offset 0, flags [none], proto ICMP (1), length 84)
+    10.10.20.10 > 10.10.10.10: ICMP echo reply, id 35, seq 3, length 64
+
