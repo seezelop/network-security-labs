@@ -48,10 +48,15 @@ The active inter-switch link was manually disabled.
 
 RSTP reconverged and the previously blocked link became the new forwarding path, while host connectivity remained available.
 
-Evidence:
+### Evidence
 
-- `evidence/01-rstp-root-and-blocked-link.png`
-- `evidence/02-rstp-failover.png`
+#### RSTP Root Bridge and Blocked Redundant Link
+
+![RSTP root bridge and blocked redundant link](evidence/01-rstp-root-and-blocked-link.png)
+
+#### RSTP Failover
+
+![RSTP failover](evidence/02-rstp-failover.png)
 
 ## LACP Validation
 
