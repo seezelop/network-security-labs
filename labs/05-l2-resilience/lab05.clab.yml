@@ -1,0 +1,28 @@
+name: lab05
+
+topology:
+  nodes:
+    host-a:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.10.50.10/24 dev eth1
+
+    host-b:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.10.50.20/24 dev eth1
+
+    sw01:
+      kind: ovs-bridge
+
+    sw02:
+      kind: ovs-bridge
+
+  links:
+    - endpoints: ["host-a:eth1", "sw01:access-a"]
+    - endpoints: ["host-b:eth1", "sw02:access-b"]
+
+    - endpoints: ["sw01:sw01-link1", "sw02:sw02-link1"]
+    - endpoints: ["sw01:sw01-link2", "sw02:sw02-link2"]

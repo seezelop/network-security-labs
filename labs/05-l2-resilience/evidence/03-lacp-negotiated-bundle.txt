@@ -1,0 +1,90 @@
+sebastian@Laptop-seba:~/Projects/network-security-labs/labs/05-l2-resilience$ sudo ovs-appctl lacp/show
+---- lag01 ----
+  status: active negotiated
+  sys_id: b6:70:0d:22:05:4c
+  sys_priority: 65534
+  aggregation key: 4
+  lacp_time: fast
+
+member: sw01-link1: current attached
+  port_id: 5
+  port_priority: 65535
+  may_enable: true
+
+  actor sys_id: b6:70:0d:22:05:4c
+  actor sys_priority: 65534
+  actor port_id: 5
+  actor port_priority: 65535
+  actor key: 4
+  actor state: activity timeout aggregation synchronized collecting distributing
+
+  partner sys_id: f6:80:39:d6:ad:4e
+  partner sys_priority: 65534
+  partner port_id: 4
+  partner port_priority: 65535
+  partner key: 4
+  partner state: activity timeout aggregation synchronized collecting distributing
+
+member: sw01-link2: current attached
+  port_id: 4
+  port_priority: 65535
+  may_enable: true
+
+  actor sys_id: b6:70:0d:22:05:4c
+  actor sys_priority: 65534
+  actor port_id: 4
+  actor port_priority: 65535
+  actor key: 4
+  actor state: activity timeout aggregation synchronized collecting distributing
+
+  partner sys_id: f6:80:39:d6:ad:4e
+  partner sys_priority: 65534
+  partner port_id: 5
+  partner port_priority: 65535
+  partner key: 4
+  partner state: activity timeout aggregation synchronized collecting distributing
+---- lag02 ----
+  status: active negotiated
+  sys_id: f6:80:39:d6:ad:4e
+  sys_priority: 65534
+  aggregation key: 4
+  lacp_time: fast
+
+member: sw02-link1: current attached
+  port_id: 4
+  port_priority: 65535
+  may_enable: true
+
+  actor sys_id: f6:80:39:d6:ad:4e
+  actor sys_priority: 65534
+  actor port_id: 4
+  actor port_priority: 65535
+  actor key: 4
+  actor state: activity timeout aggregation synchronized collecting distributing
+
+  partner sys_id: b6:70:0d:22:05:4c
+  partner sys_priority: 65534
+  partner port_id: 5
+  partner port_priority: 65535
+  partner key: 4
+  partner state: activity timeout aggregation synchronized collecting distributing
+
+member: sw02-link2: current attached
+  port_id: 5
+  port_priority: 65535
+  may_enable: true
+
+  actor sys_id: f6:80:39:d6:ad:4e
+  actor sys_priority: 65534
+  actor port_id: 5
+  actor port_priority: 65535
+  actor key: 4
+  actor state: activity timeout aggregation synchronized collecting distributing
+
+  partner sys_id: b6:70:0d:22:05:4c
+  partner sys_priority: 65534
+  partner port_id: 4
+  partner port_priority: 65535
+  partner key: 4
+  partner state: activity timeout aggregation synchronized collecting distributing
+

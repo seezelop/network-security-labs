@@ -1,0 +1,40 @@
+{
+  "freeTextAnnotations": [],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "host-a",
+      "position": {
+        "x": 380,
+        "y": 280
+      }
+    },
+    {
+      "id": "host-b",
+      "position": {
+        "x": 700,
+        "y": 280
+      }
+    },
+    {
+      "id": "sw01",
+      "position": {
+        "x": 460,
+        "y": 420
+      }
+    },
+    {
+      "id": "sw02",
+      "position": {
+        "x": 640,
+        "y": 420
+      }
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {}
+}

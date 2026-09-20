@@ -1,0 +1,281 @@
+sebastian@Laptop-seba:~/Projects/network-security-labs/labs/05-l2-resilience$ sudo timeout 35 tcpdump -eni sw01-link1 -vv 'ether proto 0x88cc'tcpdump: listening on sw01-link1, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+16:57:52.492507 aa:c1:ab:ce:dc:38 > 01:80:c2:00:00:0e, ethertype LLDP (0x88cc), length 119: LLDP, length 105
+	Chassis ID TLV (1), length 7
+	  Subtype MAC address (4): aa:c1:ab:ce:dc:38
+	  0x0000:  04aa c1ab cedc 38
+	Port ID TLV (2), length 11
+	  Subtype Interface Name (5): sw02-link1
+	  0x0000:  0573 7730 322d 6c69 6e6b 31
+	Time to Live TLV (3), length 2: TTL 120s
+	  0x0000:  0078
+	System Description TLV (6), length 17
+	  openvswitch 3.7.1
+	  0x0000:  6f70 656e 7673 7769 7463 6820 332e 372e
+	  0x0010:  31
+	System Capabilities TLV (7), length 4
+	  System  Capabilities [Bridge] (0x0004)
+	  Enabled Capabilities [Bridge] (0x0004)
+	  0x0000:  0004 0004
+	Organization specific TLV (127), length 50: OUI Unknown (0x00040d)
+	  0x0000:  0004 0d0b 0000 0000 0000 0000 0000 0000
+	  0x0010:  0000 0000 0000 0000 0000 0000 0000 0000
+	  0x0020:  0000 0000 3800 0000 aac1 abce dc38 0000
+	  0x0030:  0000
+	End TLV (0), length 0
+16:57:52.492610 aa:c1:ab:d6:e1:c8 > 01:80:c2:00:00:0e, ethertype LLDP (0x88cc), length 119: LLDP, length 105
+	Chassis ID TLV (1), length 7
+	  Subtype MAC address (4): aa:c1:ab:d6:e1:c8
+	  0x0000:  04aa c1ab d6e1 c8
+	Port ID TLV (2), length 11
+	  Subtype Interface Name (5): sw01-link1
+	  0x0000:  0573 7730 312d 6c69 6e6b 31
+	Time to Live TLV (3), length 2: TTL 120s
+	  0x0000:  0078
+	System Description TLV (6), length 17
+	  openvswitch 3.7.1
+	  0x0000:  6f70 656e 7673 7769 7463 6820 332e 372e
+	  0x0010:  31
+	System Capabilities TLV (7), length 4
+	  System  Capabilities [Bridge] (0x0004)
+	  Enabled Capabilities [Bridge] (0x0004)
+	  0x0000:  0004 0004
+	Organization specific TLV (127), length 50: OUI Unknown (0x00040d)
+	  0x0000:  0004 0d0b 0000 0000 0000 0000 0000 0000
+	  0x0010:  0000 0000 0000 0000 0000 0000 0000 0000
+	  0x0020:  0000 0000 3800 0000 aac1 abd6 e1c8 0000
+	  0x0030:  0000
+	End TLV (0), length 0
+16:57:57.492568 aa:c1:ab:d6:e1:c8 > 01:80:c2:00:00:0e, ethertype LLDP (0x88cc), length 119: LLDP, length 105
+	Chassis ID TLV (1), length 7
+	  Subtype MAC address (4): aa:c1:ab:d6:e1:c8
+	  0x0000:  04aa c1ab d6e1 c8
+	Port ID TLV (2), length 11
+	  Subtype Interface Name (5): sw01-link1
+	  0x0000:  0573 7730 312d 6c69 6e6b 31
+	Time to Live TLV (3), length 2: TTL 120s
+	  0x0000:  0078
+	System Description TLV (6), length 17
+	  openvswitch 3.7.1
+	  0x0000:  6f70 656e 7673 7769 7463 6820 332e 372e
+	  0x0010:  31
+	System Capabilities TLV (7), length 4
+	  System  Capabilities [Bridge] (0x0004)
+	  Enabled Capabilities [Bridge] (0x0004)
+	  0x0000:  0004 0004
+	Organization specific TLV (127), length 50: OUI Unknown (0x00040d)
+	  0x0000:  0004 0d0b 0000 0000 0000 0000 0000 0000
+	  0x0010:  0000 0000 0000 0000 0000 0000 0000 0000
+	  0x0020:  0000 0000 3800 0000 aac1 abd6 e1c8 0000
+	  0x0030:  0000
+	End TLV (0), length 0
+16:57:57.492637 aa:c1:ab:ce:dc:38 > 01:80:c2:00:00:0e, ethertype LLDP (0x88cc), length 119: LLDP, length 105
+	Chassis ID TLV (1), length 7
+	  Subtype MAC address (4): aa:c1:ab:ce:dc:38
+	  0x0000:  04aa c1ab cedc 38
+	Port ID TLV (2), length 11
+	  Subtype Interface Name (5): sw02-link1
+	  0x0000:  0573 7730 322d 6c69 6e6b 31
+	Time to Live TLV (3), length 2: TTL 120s
+	  0x0000:  0078
+	System Description TLV (6), length 17
+	  openvswitch 3.7.1
+	  0x0000:  6f70 656e 7673 7769 7463 6820 332e 372e
+	  0x0010:  31
+	System Capabilities TLV (7), length 4
+	  System  Capabilities [Bridge] (0x0004)
+	  Enabled Capabilities [Bridge] (0x0004)
+	  0x0000:  0004 0004
+	Organization specific TLV (127), length 50: OUI Unknown (0x00040d)
+	  0x0000:  0004 0d0b 0000 0000 0000 0000 0000 0000
+	  0x0010:  0000 0000 0000 0000 0000 0000 0000 0000
+	  0x0020:  0000 0000 3800 0000 aac1 abce dc38 0000
+	  0x0030:  0000
+	End TLV (0), length 0
+16:58:02.493312 aa:c1:ab:ce:dc:38 > 01:80:c2:00:00:0e, ethertype LLDP (0x88cc), length 119: LLDP, length 105
+	Chassis ID TLV (1), length 7
+	  Subtype MAC address (4): aa:c1:ab:ce:dc:38
+	  0x0000:  04aa c1ab cedc 38
+	Port ID TLV (2), length 11
+	  Subtype Interface Name (5): sw02-link1
+	  0x0000:  0573 7730 322d 6c69 6e6b 31
+	Time to Live TLV (3), length 2: TTL 120s
+	  0x0000:  0078
+	System Description TLV (6), length 17
+	  openvswitch 3.7.1
+	  0x0000:  6f70 656e 7673 7769 7463 6820 332e 372e
+	  0x0010:  31
+	System Capabilities TLV (7), length 4
+	  System  Capabilities [Bridge] (0x0004)
+	  Enabled Capabilities [Bridge] (0x0004)
+	  0x0000:  0004 0004
+	Organization specific TLV (127), length 50: OUI Unknown (0x00040d)
+	  0x0000:  0004 0d0b 0000 0000 0000 0000 0000 0000
+	  0x0010:  0000 0000 0000 0000 0000 0000 0000 0000
+	  0x0020:  0000 0000 3800 0000 aac1 abce dc38 0000
+	  0x0030:  0000
+	End TLV (0), length 0
+16:58:02.493436 aa:c1:ab:d6:e1:c8 > 01:80:c2:00:00:0e, ethertype LLDP (0x88cc), length 119: LLDP, length 105
+	Chassis ID TLV (1), length 7
+	  Subtype MAC address (4): aa:c1:ab:d6:e1:c8
+	  0x0000:  04aa c1ab d6e1 c8
+	Port ID TLV (2), length 11
+	  Subtype Interface Name (5): sw01-link1
+	  0x0000:  0573 7730 312d 6c69 6e6b 31
+	Time to Live TLV (3), length 2: TTL 120s
+	  0x0000:  0078
+	System Description TLV (6), length 17
+	  openvswitch 3.7.1
+	  0x0000:  6f70 656e 7673 7769 7463 6820 332e 372e
+	  0x0010:  31
+	System Capabilities TLV (7), length 4
+	  System  Capabilities [Bridge] (0x0004)
+	  Enabled Capabilities [Bridge] (0x0004)
+	  0x0000:  0004 0004
+	Organization specific TLV (127), length 50: OUI Unknown (0x00040d)
+	  0x0000:  0004 0d0b 0000 0000 0000 0000 0000 0000
+	  0x0010:  0000 0000 0000 0000 0000 0000 0000 0000
+	  0x0020:  0000 0000 3800 0000 aac1 abd6 e1c8 0000
+	  0x0030:  0000
+	End TLV (0), length 0
+16:58:07.493483 aa:c1:ab:ce:dc:38 > 01:80:c2:00:00:0e, ethertype LLDP (0x88cc), length 119: LLDP, length 105
+	Chassis ID TLV (1), length 7
+	  Subtype MAC address (4): aa:c1:ab:ce:dc:38
+	  0x0000:  04aa c1ab cedc 38
+	Port ID TLV (2), length 11
+	  Subtype Interface Name (5): sw02-link1
+	  0x0000:  0573 7730 322d 6c69 6e6b 31
+	Time to Live TLV (3), length 2: TTL 120s
+	  0x0000:  0078
+	System Description TLV (6), length 17
+	  openvswitch 3.7.1
+	  0x0000:  6f70 656e 7673 7769 7463 6820 332e 372e
+	  0x0010:  31
+	System Capabilities TLV (7), length 4
+	  System  Capabilities [Bridge] (0x0004)
+	  Enabled Capabilities [Bridge] (0x0004)
+	  0x0000:  0004 0004
+	Organization specific TLV (127), length 50: OUI Unknown (0x00040d)
+	  0x0000:  0004 0d0b 0000 0000 0000 0000 0000 0000
+	  0x0010:  0000 0000 0000 0000 0000 0000 0000 0000
+	  0x0020:  0000 0000 3800 0000 aac1 abce dc38 0000
+	  0x0030:  0000
+	End TLV (0), length 0
+16:58:07.493583 aa:c1:ab:d6:e1:c8 > 01:80:c2:00:00:0e, ethertype LLDP (0x88cc), length 119: LLDP, length 105
+	Chassis ID TLV (1), length 7
+	  Subtype MAC address (4): aa:c1:ab:d6:e1:c8
+	  0x0000:  04aa c1ab d6e1 c8
+	Port ID TLV (2), length 11
+	  Subtype Interface Name (5): sw01-link1
+	  0x0000:  0573 7730 312d 6c69 6e6b 31
+	Time to Live TLV (3), length 2: TTL 120s
+	  0x0000:  0078
+	System Description TLV (6), length 17
+	  openvswitch 3.7.1
+	  0x0000:  6f70 656e 7673 7769 7463 6820 332e 372e
+	  0x0010:  31
+	System Capabilities TLV (7), length 4
+	  System  Capabilities [Bridge] (0x0004)
+	  Enabled Capabilities [Bridge] (0x0004)
+	  0x0000:  0004 0004
+	Organization specific TLV (127), length 50: OUI Unknown (0x00040d)
+	  0x0000:  0004 0d0b 0000 0000 0000 0000 0000 0000
+	  0x0010:  0000 0000 0000 0000 0000 0000 0000 0000
+	  0x0020:  0000 0000 3800 0000 aac1 abd6 e1c8 0000
+	  0x0030:  0000
+	End TLV (0), length 0
+16:58:16.175646 aa:c1:ab:ce:dc:38 > 01:80:c2:00:00:0e, ethertype LLDP (0x88cc), length 119: LLDP, length 105
+	Chassis ID TLV (1), length 7
+	  Subtype MAC address (4): aa:c1:ab:ce:dc:38
+	  0x0000:  04aa c1ab cedc 38
+	Port ID TLV (2), length 11
+	  Subtype Interface Name (5): sw02-link1
+	  0x0000:  0573 7730 322d 6c69 6e6b 31
+	Time to Live TLV (3), length 2: TTL 120s
+	  0x0000:  0078
+	System Description TLV (6), length 17
+	  openvswitch 3.7.1
+	  0x0000:  6f70 656e 7673 7769 7463 6820 332e 372e
+	  0x0010:  31
+	System Capabilities TLV (7), length 4
+	  System  Capabilities [Bridge] (0x0004)
+	  Enabled Capabilities [Bridge] (0x0004)
+	  0x0000:  0004 0004
+	Organization specific TLV (127), length 50: OUI Unknown (0x00040d)
+	  0x0000:  0004 0d0b 0000 0000 0000 0000 0000 0000
+	  0x0010:  0000 0000 0000 0000 0000 0000 0000 0000
+	  0x0020:  0000 0000 3800 0000 aac1 abce dc38 0000
+	  0x0030:  0000
+	End TLV (0), length 0
+16:58:16.178780 aa:c1:ab:d6:e1:c8 > 01:80:c2:00:00:0e, ethertype LLDP (0x88cc), length 119: LLDP, length 105
+	Chassis ID TLV (1), length 7
+	  Subtype MAC address (4): aa:c1:ab:d6:e1:c8
+	  0x0000:  04aa c1ab d6e1 c8
+	Port ID TLV (2), length 11
+	  Subtype Interface Name (5): sw01-link1
+	  0x0000:  0573 7730 312d 6c69 6e6b 31
+	Time to Live TLV (3), length 2: TTL 120s
+	  0x0000:  0078
+	System Description TLV (6), length 17
+	  openvswitch 3.7.1
+	  0x0000:  6f70 656e 7673 7769 7463 6820 332e 372e
+	  0x0010:  31
+	System Capabilities TLV (7), length 4
+	  System  Capabilities [Bridge] (0x0004)
+	  Enabled Capabilities [Bridge] (0x0004)
+	  0x0000:  0004 0004
+	Organization specific TLV (127), length 50: OUI Unknown (0x00040d)
+	  0x0000:  0004 0d0b 0000 0000 0000 0000 0000 0000
+	  0x0010:  0000 0000 0000 0000 0000 0000 0000 0000
+	  0x0020:  0000 0000 3800 0000 aac1 abd6 e1c8 0000
+	  0x0030:  0000
+	End TLV (0), length 0
+16:58:21.176058 aa:c1:ab:ce:dc:38 > 01:80:c2:00:00:0e, ethertype LLDP (0x88cc), length 119: LLDP, length 105
+	Chassis ID TLV (1), length 7
+	  Subtype MAC address (4): aa:c1:ab:ce:dc:38
+	  0x0000:  04aa c1ab cedc 38
+	Port ID TLV (2), length 11
+	  Subtype Interface Name (5): sw02-link1
+	  0x0000:  0573 7730 322d 6c69 6e6b 31
+	Time to Live TLV (3), length 2: TTL 120s
+	  0x0000:  0078
+	System Description TLV (6), length 17
+	  openvswitch 3.7.1
+	  0x0000:  6f70 656e 7673 7769 7463 6820 332e 372e
+	  0x0010:  31
+	System Capabilities TLV (7), length 4
+	  System  Capabilities [Bridge] (0x0004)
+	  Enabled Capabilities [Bridge] (0x0004)
+	  0x0000:  0004 0004
+	Organization specific TLV (127), length 50: OUI Unknown (0x00040d)
+	  0x0000:  0004 0d0b 0000 0000 0000 0000 0000 0000
+	  0x0010:  0000 0000 0000 0000 0000 0000 0000 0000
+	  0x0020:  0000 0000 3800 0000 aac1 abce dc38 0000
+	  0x0030:  0000
+	End TLV (0), length 0
+16:58:21.179209 aa:c1:ab:d6:e1:c8 > 01:80:c2:00:00:0e, ethertype LLDP (0x88cc), length 119: LLDP, length 105
+	Chassis ID TLV (1), length 7
+	  Subtype MAC address (4): aa:c1:ab:d6:e1:c8
+	  0x0000:  04aa c1ab d6e1 c8
+	Port ID TLV (2), length 11
+	  Subtype Interface Name (5): sw01-link1
+	  0x0000:  0573 7730 312d 6c69 6e6b 31
+	Time to Live TLV (3), length 2: TTL 120s
+	  0x0000:  0078
+	System Description TLV (6), length 17
+	  openvswitch 3.7.1
+	  0x0000:  6f70 656e 7673 7769 7463 6820 332e 372e
+	  0x0010:  31
+	System Capabilities TLV (7), length 4
+	  System  Capabilities [Bridge] (0x0004)
+	  Enabled Capabilities [Bridge] (0x0004)
+	  0x0000:  0004 0004
+	Organization specific TLV (127), length 50: OUI Unknown (0x00040d)
+	  0x0000:  0004 0d0b 0000 0000 0000 0000 0000 0000
+	  0x0010:  0000 0000 0000 0000 0000 0000 0000 0000
+	  0x0020:  0000 0000 3800 0000 aac1 abd6 e1c8 0000
+	  0x0030:  0000
+	End TLV (0), length 0
+
+12 packets captured
+12 packets received by filter
+0 packets dropped by kernel
