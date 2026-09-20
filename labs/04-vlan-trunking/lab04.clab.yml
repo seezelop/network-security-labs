@@ -1,0 +1,42 @@
+name: lab04
+
+topology:
+  nodes:
+    user-a:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.10.10.10/24 dev eth1
+
+    user-b:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.10.10.20/24 dev eth1
+
+    server-a:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.10.20.10/24 dev eth1
+
+    server-b:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.10.20.20/24 dev eth1
+
+    br-lab04-sw1:
+      kind: ovs-bridge
+
+    br-lab04-sw2:
+      kind: ovs-bridge
+
+  links:
+    - endpoints: ["user-a:eth1", "br-lab04-sw1:sw1-u10"]
+    - endpoints: ["server-a:eth1", "br-lab04-sw1:sw1-s20"]
+
+    - endpoints: ["user-b:eth1", "br-lab04-sw2:sw2-u10"]
+    - endpoints: ["server-b:eth1", "br-lab04-sw2:sw2-s20"]
+
+    - endpoints: ["br-lab04-sw1:sw1-trunk", "br-lab04-sw2:sw2-trunk"]

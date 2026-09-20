@@ -1,0 +1,120 @@
+{
+  "freeTextAnnotations": [
+    {
+      "id": "freeText_1789921223108",
+      "text": "VLAN 10\n",
+      "position": {
+        "x": 543.2040171984131,
+        "y": 555.5400455252112
+      },
+      "fontSize": 14,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1789921404821",
+      "text": "VLAN 20\n",
+      "position": {
+        "x": 554.8466846473633,
+        "y": 284.095438252916
+      },
+      "fontSize": 14,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    }
+  ],
+  "freeShapeAnnotations": [
+    {
+      "id": "freeShape_1789921165858",
+      "shapeType": "rectangle",
+      "position": {
+        "x": 439.66971053012765,
+        "y": 489.9731882576432
+      },
+      "width": 290,
+      "height": 81,
+      "fillColor": "#09ecdd",
+      "fillOpacity": 0.2,
+      "borderColor": "#bbbebf",
+      "borderWidth": 1,
+      "borderStyle": "solid",
+      "rotation": 0,
+      "zIndex": -1
+    },
+    {
+      "id": "freeShape_1789921250040",
+      "shapeType": "rectangle",
+      "position": {
+        "x": 435.2520212450985,
+        "y": 199.25202124509858
+      },
+      "width": 301,
+      "height": 103,
+      "fillColor": "#09ecdd",
+      "fillOpacity": 0.2,
+      "borderColor": "#bbbebf",
+      "borderWidth": 1,
+      "borderStyle": "solid",
+      "rotation": 0,
+      "zIndex": -1
+    }
+  ],
+  "trafficRateAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "user-a",
+      "position": {
+        "x": 480,
+        "y": 500
+      }
+    },
+    {
+      "id": "user-b",
+      "position": {
+        "x": 640,
+        "y": 500
+      }
+    },
+    {
+      "id": "server-a",
+      "position": {
+        "x": 480,
+        "y": 220
+      }
+    },
+    {
+      "id": "server-b",
+      "position": {
+        "x": 640,
+        "y": 220
+      }
+    },
+    {
+      "id": "br-lab04-sw1",
+      "position": {
+        "x": 480,
+        "y": 360
+      }
+    },
+    {
+      "id": "br-lab04-sw2",
+      "position": {
+        "x": 640,
+        "y": 360
+      }
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {}
+}
