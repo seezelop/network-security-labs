@@ -1,0 +1,67 @@
+17:09:56.719259 aa:c1:ab:3b:eb:5d > ff:ff:ff:ff:ff:ff, ethertype IPv4 (0x0800), length 342: (tos 0x0, ttl 64, id 0, offset 0, flags [none], proto UDP (17), length 328)
+    0.0.0.0.68 > 255.255.255.255.67: [udp sum ok] BOOTP/DHCP, Request from aa:c1:ab:3b:eb:5d, length 300, xid 0xd8370462, secs 3, Flags [none] (0x0000)
+	  Client-Ethernet-Address aa:c1:ab:3b:eb:5d
+	  Vendor-rfc1048 Extensions
+	    Magic Cookie 0x63825363
+	    DHCP-Message (53), length 1: Discover
+	    MSZ (57), length 2: 576
+	    Parameter-Request (55), length 7: 
+	      Subnet-Mask (1), Default-Gateway (3), Domain-Name-Server (6), Hostname (12)
+	      Domain-Name (15), BR (28), NTP (42)
+	    Vendor-Class (60), length 12: "udhcp 1.37.0"
+	    Client-ID (61), length 7: ether aa:c1:ab:3b:eb:5d
+	    END (255), length 0
+	    PAD (0), length 0, occurs 20
+17:09:56.719584 aa:c1:ab:7f:75:42 > aa:c1:ab:3b:eb:5d, ethertype IPv4 (0x0800), length 342: (tos 0xc0, ttl 64, id 52960, offset 0, flags [none], proto UDP (17), length 328)
+    10.20.10.2.67 > 10.20.10.141.68: [udp sum ok] BOOTP/DHCP, Reply, length 300, xid 0xd8370462, secs 3, Flags [none] (0x0000)
+	  Your-IP 10.20.10.141
+	  Server-IP 10.20.10.2
+	  Client-Ethernet-Address aa:c1:ab:3b:eb:5d
+	  Vendor-rfc1048 Extensions
+	    Magic Cookie 0x63825363
+	    DHCP-Message (53), length 1: Offer
+	    Server-ID (54), length 4: 10.20.10.2
+	    Lease-Time (51), length 4: 3600
+	    RN (58), length 4: 1800
+	    RB (59), length 4: 3150
+	    Subnet-Mask (1), length 4: 255.255.255.0
+	    BR (28), length 4: 10.20.10.255
+	    Domain-Name-Server (6), length 4: 10.20.20.10
+	    Default-Gateway (3), length 4: 10.20.10.1
+	    END (255), length 0
+	    PAD (0), length 0, occurs 8
+17:09:56.728266 aa:c1:ab:3b:eb:5d > ff:ff:ff:ff:ff:ff, ethertype IPv4 (0x0800), length 342: (tos 0x0, ttl 64, id 0, offset 0, flags [none], proto UDP (17), length 328)
+    0.0.0.0.68 > 255.255.255.255.67: [udp sum ok] BOOTP/DHCP, Request from aa:c1:ab:3b:eb:5d, length 300, xid 0xd8370462, secs 3, Flags [none] (0x0000)
+	  Client-Ethernet-Address aa:c1:ab:3b:eb:5d
+	  Vendor-rfc1048 Extensions
+	    Magic Cookie 0x63825363
+	    DHCP-Message (53), length 1: Request
+	    Requested-IP (50), length 4: 10.20.10.141
+	    Server-ID (54), length 4: 10.20.10.2
+	    MSZ (57), length 2: 576
+	    Parameter-Request (55), length 7: 
+	      Subnet-Mask (1), Default-Gateway (3), Domain-Name-Server (6), Hostname (12)
+	      Domain-Name (15), BR (28), NTP (42)
+	    Vendor-Class (60), length 12: "udhcp 1.37.0"
+	    Client-ID (61), length 7: ether aa:c1:ab:3b:eb:5d
+	    END (255), length 0
+	    PAD (0), length 0, occurs 8
+17:09:56.729959 aa:c1:ab:7f:75:42 > aa:c1:ab:3b:eb:5d, ethertype IPv4 (0x0800), length 342: (tos 0xc0, ttl 64, id 52970, offset 0, flags [none], proto UDP (17), length 328)
+    10.20.10.2.67 > 10.20.10.141.68: [udp sum ok] BOOTP/DHCP, Reply, length 300, xid 0xd8370462, secs 3, Flags [none] (0x0000)
+	  Your-IP 10.20.10.141
+	  Server-IP 10.20.10.2
+	  Client-Ethernet-Address aa:c1:ab:3b:eb:5d
+	  Vendor-rfc1048 Extensions
+	    Magic Cookie 0x63825363
+	    DHCP-Message (53), length 1: ACK
+	    Server-ID (54), length 4: 10.20.10.2
+	    Lease-Time (51), length 4: 3600
+	    RN (58), length 4: 1800
+	    RB (59), length 4: 3150
+	    Subnet-Mask (1), length 4: 255.255.255.0
+	    BR (28), length 4: 10.20.10.255
+	    Domain-Name-Server (6), length 4: 10.20.20.10
+	    Default-Gateway (3), length 4: 10.20.10.1
+	    END (255), length 0
+	    PAD (0), length 0, occurs 8
+

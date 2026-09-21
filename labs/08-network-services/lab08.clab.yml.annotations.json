@@ -1,0 +1,61 @@
+{
+  "freeTextAnnotations": [],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "client01",
+      "position": {
+        "x": 220,
+        "y": 340
+      }
+    },
+    {
+      "id": "dhcp01",
+      "position": {
+        "x": 300,
+        "y": 140
+      }
+    },
+    {
+      "id": "r01",
+      "position": {
+        "x": 440,
+        "y": 440
+      }
+    },
+    {
+      "id": "dns01",
+      "position": {
+        "x": 620,
+        "y": 260
+      }
+    },
+    {
+      "id": "ntp01",
+      "position": {
+        "x": 600,
+        "y": 580
+      }
+    },
+    {
+      "id": "sw01",
+      "position": {
+        "x": 380,
+        "y": 280
+      }
+    },
+    {
+      "id": "sw02",
+      "position": {
+        "x": 600,
+        "y": 420
+      }
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {}
+}
