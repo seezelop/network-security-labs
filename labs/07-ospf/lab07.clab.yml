@@ -1,0 +1,63 @@
+name: lab07
+
+topology:
+  nodes:
+    r01:
+      kind: linux
+      image: quay.io/frrouting/frr:10.6.1
+      binds:
+        - configs/daemons:/etc/frr/daemons
+        - configs/r01/frr.conf:/etc/frr/frr.conf
+      exec:
+        - sysctl -w net.ipv4.ip_forward=1
+
+    r02:
+      kind: linux
+      image: quay.io/frrouting/frr:10.6.1
+      binds:
+        - configs/daemons:/etc/frr/daemons
+        - configs/r02/frr.conf:/etc/frr/frr.conf
+      exec:
+        - sysctl -w net.ipv4.ip_forward=1
+
+    r03:
+      kind: linux
+      image: quay.io/frrouting/frr:10.6.1
+      binds:
+        - configs/daemons:/etc/frr/daemons
+        - configs/r03/frr.conf:/etc/frr/frr.conf
+      exec:
+        - sysctl -w net.ipv4.ip_forward=1
+
+    r04:
+      kind: linux
+      image: quay.io/frrouting/frr:10.6.1
+      binds:
+        - configs/daemons:/etc/frr/daemons
+        - configs/r04/frr.conf:/etc/frr/frr.conf
+      exec:
+        - sysctl -w net.ipv4.ip_forward=1
+
+    host-a:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.10.10.10/24 dev eth1
+        - ip route replace default via 10.10.10.1 dev eth1
+
+    host-b:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.10.40.10/24 dev eth1
+        - ip route replace default via 10.10.40.1 dev eth1
+
+  links:
+    - endpoints: ["r01:eth1", "r02:eth1"]
+    - endpoints: ["r01:eth2", "r03:eth1"]
+
+    - endpoints: ["r02:eth2", "r04:eth1"]
+    - endpoints: ["r03:eth2", "r04:eth2"]
+
+    - endpoints: ["host-a:eth1", "r01:eth3"]
+    - endpoints: ["r04:eth3", "host-b:eth1"]
