@@ -1,0 +1,44 @@
+flush ruleset
+
+table inet filter {
+
+    chain forward {
+        type filter hook forward priority 0;
+        policy drop;
+
+        # Drop invalid connection states
+        ct state invalid counter drop
+
+        # Allow return traffic from previously accepted connections
+        ct state established,related counter accept
+
+        # Allow HTTPS from INTERNAL to server01
+        iifname "eth1" oifname "eth2" \
+        ip saddr 10.30.10.0/24 \
+        ip daddr 10.30.20.10 \
+        tcp dport 443 \
+        ct state new counter accept
+
+        # Allow ICMP echo requests from INTERNAL to EXTERNAL
+        iifname "eth1" oifname "eth2" \
+        ip protocol icmp \
+        icmp type echo-request \
+        counter accept
+
+        # Log and drop everything else
+        counter log prefix "LAB09-DROP: " drop
+    }
+}
+
+table ip nat {
+
+    chain postrouting {
+        type nat hook postrouting priority srcnat;
+        policy accept;
+
+        # Translate INTERNAL source addresses to fw01 external address
+        oifname "eth2" \
+        ip saddr 10.30.10.0/24 \
+        counter snat to 10.30.20.1
+    }
+}

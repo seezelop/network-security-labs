@@ -1,0 +1,219 @@
+# ============================================================
+# LAB 09 - NAT, Stateful Firewall and Network Policy
+# ============================================================
+#
+# DATA PLANE
+#
+# INTERNAL / TRUSTED LAN
+# Network: 10.30.10.0/24
+#
+#   client01 eth1 = 10.30.10.10/24
+#   fw01     eth1 = 10.30.10.1/24
+#
+#
+# EXTERNAL / UNTRUSTED LAN
+# Network: 10.30.20.0/24
+#
+#   fw01     eth2 = 10.30.20.1/24
+#   server01 eth1 = 10.30.20.10/24
+#
+#
+# CONTAINERLAB MANAGEMENT NETWORK
+# Network: 172.20.20.0/24
+#
+#   eth0 of each container is automatically connected
+#   to the Containerlab management network.
+#
+#   This network is NOT part of the LAB 09 data plane.
+#
+#
+# SERVICES ON server01
+#
+#   TCP/443  = HTTPS service -> will be ALLOWED
+#   TCP/8080 = HTTP test     -> will be BLOCKED
+#
+#
+# sw01 and sw02 are Layer 2 Open vSwitch bridges.
+# They do not need Layer 3 IP addresses.
+#
+# ============================================================
+
+name: lab09
+
+topology:
+  nodes:
+
+    # ========================================================
+    # INTERNAL CLIENT
+    # ========================================================
+    #
+    # eth0 -> Containerlab management
+    # eth1 -> 10.30.10.10/24
+    #
+    # To reach the EXTERNAL network:
+    #
+    # 10.30.20.0/24
+    #        |
+    #        v
+    # gateway 10.30.10.1 (fw01)
+    #
+    client01:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - apk add --no-cache curl tcpdump
+        - ip addr add 10.30.10.10/24 dev eth1
+        - ip route add 10.30.20.0/24 via 10.30.10.1 dev eth1
+
+
+    # ========================================================
+    # FIREWALL / ROUTER / NAT
+    # ========================================================
+    #
+    # eth0 -> Containerlab management
+    #
+    # eth1 -> INTERNAL / TRUSTED
+    #         10.30.10.1/24
+    #
+    # eth2 -> EXTERNAL / UNTRUSTED
+    #         10.30.20.1/24
+    #
+    # fw01 connects both networks.
+    #
+    # During the lab it will provide:
+    #
+    # - Layer 3 routing
+    # - Stateful firewalling
+    # - Default-deny policy
+    # - Connection tracking
+    # - Firewall logging
+    # - NAT
+    #
+    fw01:
+      kind: linux
+      image: alpine:latest
+
+      binds:
+        - configs/nftables/firewall.nft:/etc/nftables-lab09.nft:ro
+
+      exec:
+        - apk add --no-cache nftables tcpdump conntrack-tools
+        - ip addr add 10.30.10.1/24 dev eth1
+        - ip addr add 10.30.20.1/24 dev eth2
+        - sysctl -w net.ipv4.ip_forward=1
+        - nft -f /etc/nftables-lab09.nft
+
+
+    # ========================================================
+    # EXTERNAL SERVER
+    # ========================================================
+    #
+    # eth0 -> Containerlab management
+    # eth1 -> 10.30.20.10/24
+    #
+    # Return route:
+    #
+    # 10.30.10.0/24
+    #        |
+    #        v
+    # gateway 10.30.20.1 (fw01)
+    #
+    #
+    # SERVICES
+    #
+    # TCP/443
+    #   HTTPS service using TLS
+    #   This service will be ALLOWED by the firewall.
+    #
+    # TCP/8080
+    #   HTTP test service
+    #   This service will be BLOCKED by the firewall.
+    #
+    server01:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - apk add --no-cache darkhttpd tcpdump openssl
+
+        - ip addr add 10.30.20.10/24 dev eth1
+        
+        # ----------------------------------------------------
+        # HTTP test service on TCP/8080
+        # ----------------------------------------------------
+        - mkdir -p /www8080
+        - sh -c 'echo "LAB09 - HTTP 8080 test service" > /www8080/index.html'
+        - darkhttpd /www8080 --port 8080 --daemon
+
+        # ----------------------------------------------------
+        # Generate temporary self-signed TLS certificate
+        # ----------------------------------------------------
+        - openssl req -x509 -newkey rsa:2048 -nodes -keyout /tmp/lab09.key -out /tmp/lab09.crt -days 1 -subj "/CN=server01.lab"
+
+        # ----------------------------------------------------
+        # HTTPS service on TCP/443
+        # ----------------------------------------------------
+        - sh -c 'openssl s_server -accept 443 -cert /tmp/lab09.crt -key /tmp/lab09.key -www >/tmp/https.log 2>&1 &'
+
+
+    # ========================================================
+    # INTERNAL LAYER 2 SWITCH
+    # ========================================================
+    #
+    # INTERNAL LAN: 10.30.10.0/24
+    #
+    # Connects:
+    #
+    # client01 eth1
+    # fw01     eth1
+    #
+    sw01:
+      kind: ovs-bridge
+
+
+    # ========================================================
+    # EXTERNAL LAYER 2 SWITCH
+    # ========================================================
+    #
+    # EXTERNAL LAN: 10.30.20.0/24
+    #
+    # Connects:
+    #
+    # fw01     eth2
+    # server01 eth1
+    #
+    sw02:
+      kind: ovs-bridge
+
+
+  # ==========================================================
+  # LINKS
+  # ==========================================================
+
+  links:
+
+    # --------------------------------------------------------
+    # INTERNAL / TRUSTED LAN
+    # 10.30.10.0/24
+    # --------------------------------------------------------
+
+    - endpoints:
+        - "client01:eth1"
+        - "sw01:client"
+
+    - endpoints:
+        - "fw01:eth1"
+        - "sw01:fw-internal"
+
+
+    # --------------------------------------------------------
+    # EXTERNAL / UNTRUSTED LAN
+    # 10.30.20.0/24
+    # --------------------------------------------------------
+
+    - endpoints:
+        - "fw01:eth2"
+        - "sw02:fw-external"
+
+    - endpoints:
+        - "server01:eth1"
+        - "sw02:server"
