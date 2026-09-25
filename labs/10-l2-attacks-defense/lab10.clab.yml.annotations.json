@@ -1,0 +1,40 @@
+{
+  "freeTextAnnotations": [],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "r01",
+      "position": {
+        "x": 360,
+        "y": 220
+      }
+    },
+    {
+      "id": "victim01",
+      "position": {
+        "x": 480,
+        "y": 420
+      }
+    },
+    {
+      "id": "attacker01",
+      "position": {
+        "x": 260,
+        "y": 420
+      }
+    },
+    {
+      "id": "sw01",
+      "position": {
+        "x": 360,
+        "y": 340
+      }
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {}
+}

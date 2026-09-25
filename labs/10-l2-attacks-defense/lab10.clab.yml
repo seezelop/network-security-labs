@@ -1,0 +1,88 @@
+# ============================================================
+# LAB 10 - ARP Spoofing Detection and L2 Defensive Controls
+#
+# NETWORK
+# 10.40.10.0/24
+#
+# r01        eth1 -> 10.40.10.1/24
+# victim01   eth1 -> 10.40.10.10/24
+# attacker01 eth1 -> 10.40.10.50/24
+#
+# r01 represents the legitimate router/default gateway
+# connected to the access LAN.
+#
+# All nodes share the same Layer 2 broadcast domain.
+#
+# eth0 belongs to the Containerlab management network and
+# is NOT part of the LAB 10 data plane.
+# ============================================================
+
+name: lab10
+
+topology:
+  nodes:
+
+    # --------------------------------------------------------
+    # LEGITIMATE ROUTER / DEFAULT GATEWAY
+    #
+    # eth1 -> 10.40.10.1/24
+    #
+    # victim01 should normally associate:
+    # 10.40.10.1 -> MAC address of r01 eth1
+    # --------------------------------------------------------
+    r01:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - apk add --no-cache tcpdump
+        - ip addr add 10.40.10.1/24 dev eth1
+
+    # --------------------------------------------------------
+    # MONITORED ENDPOINT
+    #
+    # eth1 -> 10.40.10.10/24
+    # Default gateway -> 10.40.10.1
+    # --------------------------------------------------------
+    victim01:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - apk add --no-cache tcpdump
+        - ip addr add 10.40.10.10/24 dev eth1
+        - ip route replace default via 10.40.10.1 dev eth1
+
+    # --------------------------------------------------------
+    # CONTROLLED TEST ENDPOINT
+    #
+    # eth1 -> 10.40.10.50/24
+    #
+    # arping will later be used to generate controlled
+    # ARP activity inside the isolated lab.
+    # --------------------------------------------------------
+    attacker01:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - apk add --no-cache tcpdump arping
+        - ip addr add 10.40.10.50/24 dev eth1
+        - sysctl -w net.ipv4.ip_forward=1
+
+    # --------------------------------------------------------
+    # LAYER 2 ACCESS SWITCH
+    # --------------------------------------------------------
+    sw01:
+      kind: ovs-bridge
+
+  links:
+
+    - endpoints:
+        - "r01:eth1"
+        - "sw01:router"
+
+    - endpoints:
+        - "victim01:eth1"
+        - "sw01:victim"
+
+    - endpoints:
+        - "attacker01:eth1"
+        - "sw01:attacker"
