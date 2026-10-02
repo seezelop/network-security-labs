@@ -25,7 +25,7 @@ The project combines networking fundamentals with defensive cybersecurity practi
 - nftables
 - tcpdump
 - Wireshark
-- Python
+- Shell
 - Cisco Packet Tracer
 
 ## Labs
